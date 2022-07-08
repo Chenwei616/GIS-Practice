@@ -1,0 +1,80 @@
+{
+    "displayFieldName": "",
+    "fieldAliases": {
+        "FID": "FID",
+        "name": "name",
+        "Shape_Leng": "Shape_Leng",
+        "height": "height",
+        "flg": "flg"
+    },
+    "geometryType": "esriGeometryPolyline",
+    "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+    },
+    "fields": [
+        {
+            "name": "FID",
+            "type": "esriFieldTypeOID",
+            "alias": "FID"
+        },
+        {
+            "name": "name",
+            "type": "esriFieldTypeString",
+            "alias": "name",
+            "length": 254
+        },
+        {
+            "name": "Shape_Leng",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Leng"
+        },
+        {
+            "name": "height",
+            "type": "esriFieldTypeSingle",
+            "alias": "height"
+        },
+        {
+            "name": "flg",
+            "type": "esriFieldTypeSingle",
+            "alias": "flg"
+        }
+    ],
+    "features": [
+        {
+            "attributes": {
+                "FID": 0,
+                "name": "4_1_3107",
+                "Shape_Leng": 0.000180375000144,
+                "height": 13.829999923706055,
+                "flg": 0.1
+            },
+            "geometry": {
+                "paths": [
+                    [
+                        [
+                            120.08449865,
+                            30.302368644000069
+                        ],
+                        [
+                            120.0845548530001,
+                            30.302368645000058
+                        ],
+                        [
+                            120.084554852,
+                            30.302402630000074
+                        ],
+                        [
+                            120.08449864900001,
+                            30.302402628000038
+                        ],
+                        [
+                            120.08449865,
+                            30.302368644000069
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}

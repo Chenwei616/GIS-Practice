@@ -1,0 +1,80 @@
+{
+    "displayFieldName": "",
+    "fieldAliases": {
+        "FID": "FID",
+        "name": "name",
+        "Shape_Leng": "Shape_Leng",
+        "height": "height",
+        "flg": "flg"
+    },
+    "geometryType": "esriGeometryPolyline",
+    "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+    },
+    "fields": [
+        {
+            "name": "FID",
+            "type": "esriFieldTypeOID",
+            "alias": "FID"
+        },
+        {
+            "name": "name",
+            "type": "esriFieldTypeString",
+            "alias": "name",
+            "length": 254
+        },
+        {
+            "name": "Shape_Leng",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Leng"
+        },
+        {
+            "name": "height",
+            "type": "esriFieldTypeSingle",
+            "alias": "height"
+        },
+        {
+            "name": "flg",
+            "type": "esriFieldTypeSingle",
+            "alias": "flg"
+        }
+    ],
+    "features": [
+        {
+            "attributes": {
+                "FID": 0,
+                "name": "4_3_3301",
+                "Shape_Leng": 0.00064239100015700003,
+                "height": 21.139999389648438,
+                "flg": 0
+            },
+            "geometry": {
+                "paths": [
+                    [
+                        [
+                            120.08445222100011,
+                            30.302093884000044
+                        ],
+                        [
+                            120.08445221300008,
+                            30.30236864200009
+                        ],
+                        [
+                            120.08449865,
+                            30.302368643000079
+                        ],
+                        [
+                            120.08449865900002,
+                            30.30209388500009
+                        ],
+                        [
+                            120.08445222100011,
+                            30.302093884000044
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
