@@ -204,10 +204,10 @@ def file_path(file_dir):
     return L
 
 
-de = DealExcel(u"E:\\GIS\\GIS暑期实践\\python\\垃圾Python\\模板文件\\建筑属性.xlsx")
+de = DealExcel(u".\\src\\模板文件\\建筑属性.xlsx")
 dictAttr = de.extract_attr_info()
 
-file_dir = u"E:\\GIS\\GIS暑期实践\\python\\垃圾Python\\分户"
+file_dir = u".\\src\\分户"
 dictshplist = {}
 # filepaths = file_path(file_dir)
 
@@ -250,11 +250,11 @@ for key in sorted(dictshplist.keys()):
             lpe = LPEntity(type, None, dictshplist[key])
     dictgroup.append(lpe)
 
-with open(u"E:\\GIS\\GIS暑期实践\\python\\垃圾Python\\模板文件\\template.json", 'r', encoding="utf-8") as load_f:
+with open(u".\\src\\模板文件\\template.json", 'r', encoding="utf-8") as load_f:
     load_dict = json.load(load_f)
 
 load_dict['entitylist'] = dictgroup  # json_str
 
-with open(u"E:\\GIS\\GIS暑期实践\\python\\垃圾Python\\out\\out.json", "w", encoding="utf-8") as dump_f:
+with open(u".\\src\\out\\out.json", "w", encoding="utf-8") as dump_f:
     ##E:\\00grad\\Data\\try.json
     json.dump(load_dict, dump_f, default=LPEntity.to_serializable, ensure_ascii = False)
