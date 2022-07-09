@@ -202,24 +202,8 @@ function levelSwitch() {
                                 }
                             });
                             }
-                            if (ffunction == "走廊") {
-                                orangePolygon.description = '<p>走廊编号：' + fHuID + '&nbsp;&nbsp;&nbsp;功能：' + ffunction +'</p>';
-                            }
-                            else if(ffunction == "栏杆")
-                            {
-                                orangePolygon.description = '<p>栏杆编号：' + fHuID + '&nbsp;&nbsp;&nbsp;功能：' + ffunction +'</p>';
-                            }
-                            else if(ffunction == "台阶")
-                            {
-                                orangePolygon.description = '<p>台阶：' + fHuID + '&nbsp;&nbsp;&nbsp;功能：' + ffunction +'</p>';
-                            }
-                            else if(ffunction == "天台")
-                            {
-                                orangePolygon.description = '<p>栏杆编号：' + fHuID + '&nbsp;&nbsp;&nbsp;功能：' + ffunction +'</p>';
-                            }
-                            else if(ffunction == "楼梯")
-                            {
-                                orangePolygon.description = '<p>楼梯编号：' + fHuID + '&nbsp;&nbsp;&nbsp;功能：' + ffunction +'</p>';
+                            if (ffunction == "走廊"||"栏杆"||"花坛"||"台阶"||"楼梯") {
+                                orangePolygon.description = '<p>编号：' + fHuID + '&nbsp;&nbsp;&nbsp;功能：' + ffunction +'</p>';
                             }
                             else {
                                 orangePolygon.description = '<p>房间号：' + fHuID + '&nbsp;&nbsp;&nbsp;功能：' + ffunction + '&nbsp;&nbsp;&nbsp;所属专业：' + fprofession + '&nbsp;&nbsp;&nbsp;' + fmultimedia + '&nbsp;&nbsp;&nbsp;' + fdescription + '</p>';
