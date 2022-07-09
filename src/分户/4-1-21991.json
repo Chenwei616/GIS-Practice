@@ -1,0 +1,80 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "FID" : "FID",
+    "Id" : "Id",
+    "height" : "height",
+    "flg" : "flg",
+    "name" : "name"
+  },
+  "geometryType" : "esriGeometryPolyline",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "FID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "Id",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Id"
+    },
+    {
+      "name" : "height",
+      "type" : "esriFieldTypeSingle",
+      "alias" : "height"
+    },
+    {
+      "name" : "flg",
+      "type" : "esriFieldTypeSingle",
+      "alias" : "flg"
+    },
+    {
+      "name" : "name",
+      "type" : "esriFieldTypeString",
+      "alias" : "name",
+      "length" : 254
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "FID" : 0,
+        "Id" : 0,
+        "height" : 12.430000305175781,
+        "flg" : 0,
+        "name" : "4-1-21991"
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              120.0853588680002,
+              30.301140860000157
+            ],
+            [
+              120.08540676900017,
+              30.301804782000168
+            ],
+            [
+              120.0854440766371,
+              30.30180275532609
+            ],
+            [
+              120.08539614744535,
+              30.301138446088359
+            ],
+            [
+              120.0853588680002,
+              30.301140860000142
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
