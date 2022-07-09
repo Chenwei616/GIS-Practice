@@ -1,0 +1,96 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "FID" : "FID",
+    "height" : "height",
+    "flg" : "flg",
+    "name" : "name",
+    "Shape_Leng" : "Shape_Leng"
+  },
+  "geometryType" : "esriGeometryPolyline",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "FID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "height",
+      "type" : "esriFieldTypeSingle",
+      "alias" : "height"
+    },
+    {
+      "name" : "flg",
+      "type" : "esriFieldTypeSingle",
+      "alias" : "flg"
+    },
+    {
+      "name" : "name",
+      "type" : "esriFieldTypeString",
+      "alias" : "name",
+      "length" : 254
+    },
+    {
+      "name" : "Shape_Leng",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Shape_Leng"
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "FID" : 0,
+        "height" : 22.340000152587891,
+        "flg" : 0.10000000149011612,
+        "name" : "4-3-3300253",
+        "Shape_Leng" : 0.00039023613795800003
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              120.08445224900015,
+              30.30121194100019
+            ],
+            [
+              120.08445225000014,
+              30.301163682000151
+            ],
+            [
+              120.08455489100015,
+              30.301163685000176
+            ],
+            [
+              120.08455488900017,
+              30.301209720000145
+            ],
+            [
+              120.0845532310002,
+              30.301209720000145
+            ],
+            [
+              120.08455323200019,
+              30.301165490000187
+            ],
+            [
+              120.08445400600021,
+              30.301165487000162
+            ],
+            [
+              120.08445400400012,
+              30.301211919000139
+            ],
+            [
+              120.08445224900015,
+              30.30121194100019
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

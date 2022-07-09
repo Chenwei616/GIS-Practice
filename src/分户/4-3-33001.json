@@ -1,10 +1,11 @@
 {
   "displayFieldName" : "",
   "fieldAliases" : {
-    "OBJECTID" : "OBJECTID",
-    "Shape_Length" : "Shape_Length",
+    "FID" : "FID",
     "height" : "height",
-    "flg" : "flg"
+    "flg" : "flg",
+    "name" : "name",
+    "Shape_Leng" : "Shape_Leng"
   },
   "geometryType" : "esriGeometryPolyline",
   "spatialReference" : {
@@ -13,14 +14,9 @@
   },
   "fields" : [
     {
-      "name" : "OBJECTID",
+      "name" : "FID",
       "type" : "esriFieldTypeOID",
-      "alias" : "OBJECTID"
-    },
-    {
-      "name" : "Shape_Length",
-      "type" : "esriFieldTypeDouble",
-      "alias" : "Shape_Length"
+      "alias" : "FID"
     },
     {
       "name" : "height",
@@ -31,54 +27,50 @@
       "name" : "flg",
       "type" : "esriFieldTypeSingle",
       "alias" : "flg"
+    },
+    {
+      "name" : "name",
+      "type" : "esriFieldTypeString",
+      "alias" : "name",
+      "length" : 254
+    },
+    {
+      "name" : "Shape_Leng",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Shape_Leng"
     }
   ],
   "features" : [
     {
       "attributes" : {
-        "OBJECTID" : 2,
-        "Shape_Length" : 0.0050215560029813998,
-        "height" : 22.340000152587891,
-        "flg" : 0.10000000149011612
+        "FID" : 0,
+        "height" : 21.139999389648438,
+        "flg" : 1.2000000476837158,
+        "name" : "4-3-33001",
+        "Shape_Leng" : 3.8900000163299999e-06
       },
       "geometry" : {
         "paths" : [
           [
             [
-              120.08445221300019,
-              30.302368642000147
+              120.08455437600014,
+              30.301296821000165
             ],
             [
-              120.08445225000014,
-              30.301163682000151
+              120.08455437600014,
+              30.301297819000183
             ],
             [
-              120.08455489100015,
-              30.301163685000176
+              120.08455342900015,
+              30.301297819000183
             ],
             [
-              120.08455485300021,
-              30.302368645000172
+              120.08455342900015,
+              30.301296821000165
             ],
             [
-              120.08455303500023,
-              30.302368645000172
-            ],
-            [
-              120.08455308500015,
-              30.301165471000161
-            ],
-            [
-              120.08445444700021,
-              30.301165468000193
-            ],
-            [
-              120.08445440400021,
-              30.302368642000147
-            ],
-            [
-              120.08445221300019,
-              30.302368642000147
+              120.08455437600014,
+              30.301296821000165
             ]
           ]
         ]

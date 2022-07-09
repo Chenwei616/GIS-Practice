@@ -182,7 +182,7 @@ class DealJsontemp:
         coordsgroup = []
 
         for feature in geo['features']:
-            flg = feature['attributes']['height']
+            flg = feature['attributes']['height'] - 12.43 # 减地面海拔，如果需要悬空则删除
             height = feature['attributes']['flg']
             floor = str(self.filename)[2:3]
             temp = feature['geometry']['paths']
