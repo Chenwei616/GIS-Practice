@@ -10,7 +10,7 @@ import sys
 
 reload(sys)
 # sys.setdefaultencoding('utf-8')
-print(sys.getdefaultencoding())
+# print(sys.getdefaultencoding())
 
 
 class LPEntity:
@@ -125,12 +125,16 @@ class DealExcel:
         #
         rown = sheetZ.nrows
         coln = sheetZ.ncols
-        cellsz = []
-
-        for c in range(0, coln):
-            cellsz.append(sheetZ.cell(1, c).value)
-        objz = ObjZhuang(cellsz[0], cellsz[1])
-        dictz = {str(int(objz.ID)): objz}
+        dictz = {}
+        for r in range(1, rown):
+            cellsz = []
+            if (sheetZ.cell(r, 0).value == ''):
+                break
+            for c in range(0, coln):
+                cellsz.append(sheetZ.cell(r, c).value)
+            # print(cellsz)
+            objz = ObjZhuang(cellsz[0], cellsz[1])
+            dictz.update({str(int(objz.ID)): objz})
 
         #
         rown = sheetC.nrows
@@ -207,6 +211,9 @@ def file_path(file_dir):
 de = DealExcel(u".\\src\\模板文件\\建筑属性.xlsx")
 dictAttr = de.extract_attr_info()
 
+# for key in dictAttr.keys():
+#     print(key)
+
 file_dir = u".\\src\\分户"
 dictshplist = {}
 # filepaths = file_path(file_dir)
@@ -258,3 +265,5 @@ load_dict['entitylist'] = dictgroup  # json_str
 with open(u".\\src\\out\\out.json", "w", encoding="utf-8") as dump_f:
     ##E:\\00grad\\Data\\try.json
     json.dump(load_dict, dump_f, default=LPEntity.to_serializable, ensure_ascii = False)
+
+print("Done!")
