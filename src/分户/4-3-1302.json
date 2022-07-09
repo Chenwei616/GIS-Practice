@@ -1,1 +1,88 @@
-{"displayFieldName":"","fieldAliases":{"FID":"FID","Shape_Leng":"Shape_Leng","height":"height","flg":"flg","name":"name"},"geometryType":"esriGeometryPolyline","spatialReference":{"wkid":4326,"latestWkid":4326},"fields":[{"name":"FID","type":"esriFieldTypeOID","alias":"FID"},{"name":"Shape_Leng","type":"esriFieldTypeDouble","alias":"Shape_Leng"},{"name":"height","type":"esriFieldTypeSingle","alias":"height"},{"name":"flg","type":"esriFieldTypeSingle","alias":"flg"},{"name":"name","type":"esriFieldTypeString","alias":"name","length":50}],"features":[{"attributes":{"FID":0,"Shape_Leng":0.00039719867824200003,"height":21.520000457763672,"flg":0,"name":"4-3-1302"},"geometry":{"paths":[[[120.08341349163948,30.301773040193837],[120.08351621759959,30.301772906194856],[120.08351628055209,30.301820379607022],[120.08351634260532,30.301867852119869],[120.0834115419093,30.301867745999857],[120.08341260490795,30.301816126713049],[120.08341349163948,30.301773040193837]]]}}]}
+{
+    "displayFieldName": "",
+    "fieldAliases": {
+        "FID": "FID",
+        "Shape_Leng": "Shape_Leng",
+        "height": "height",
+        "flg": "flg",
+        "name": "name"
+    },
+    "geometryType": "esriGeometryPolyline",
+    "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+    },
+    "fields": [
+        {
+            "name": "FID",
+            "type": "esriFieldTypeOID",
+            "alias": "FID"
+        },
+        {
+            "name": "Shape_Leng",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Leng"
+        },
+        {
+            "name": "height",
+            "type": "esriFieldTypeSingle",
+            "alias": "height"
+        },
+        {
+            "name": "flg",
+            "type": "esriFieldTypeSingle",
+            "alias": "flg"
+        },
+        {
+            "name": "name",
+            "type": "esriFieldTypeString",
+            "alias": "name",
+            "length": 50
+        }
+    ],
+    "features": [
+        {
+            "attributes": {
+                "FID": 0,
+                "Shape_Leng": 0.00039719867824200003,
+                "height": 21.520000457763672,
+                "flg": 3.8599998950958252,
+                "name": "4-3-1302"
+            },
+            "geometry": {
+                "paths": [
+                    [
+                        [
+                            120.08341349163948,
+                            30.301773040193837
+                        ],
+                        [
+                            120.08351621759959,
+                            30.301772906194856
+                        ],
+                        [
+                            120.08351628055209,
+                            30.301820379607022
+                        ],
+                        [
+                            120.08351634260532,
+                            30.301867852119869
+                        ],
+                        [
+                            120.0834115419093,
+                            30.301867745999857
+                        ],
+                        [
+                            120.08341260490795,
+                            30.301816126713049
+                        ],
+                        [
+                            120.08341349163948,
+                            30.301773040193837
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
