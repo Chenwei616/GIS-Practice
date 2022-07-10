@@ -1,7 +1,7 @@
 .addDataPanel {
   position: relative;
   width: 175px;
-  height: 350px;
+  height: 450px;
   margin: 100px auto; 
   padding: 20px;
   border-radius: 12px;
@@ -40,6 +40,19 @@
   background-color: rgb(155, 242, 197);
 }
 
+#select1{
+  padding: 10px auto;
+  margin: 10px;
+  text-align:center;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 8px;
+  width: 100px;
+  height: 33px;
+  color: rgba(252, 95, 10, 0.781);
+  background-color: rgb(155, 242, 197);
+}
+
 #title {
   margin: 10px 0;
   text-align: center;
@@ -54,6 +67,17 @@
   align-items:center;
   text-align: center;
 }
+
+.label1 {
+  width:105px;
+  color: #333;
+  font-weight: 700;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align: center;
+}
+
 
 .subLabel {
   font-size: 14px;

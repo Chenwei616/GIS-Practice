@@ -41,8 +41,8 @@
         <h3 id="title">房间展示</h3>
         
         <div class="label">
-          <p class="label">切换视图</p>
-          <button value=" Z"class="okBtn id="Z" onclick="levelSwitch()"title="Change Z/H View">切换</button>
+          <p class="label1">切换视图  :</p>
+          <button value=" Z"class="okBtn id="Z" onclick="levelSwitch()"title="轮廓/彩色/真实/线框 View">切换</button>
         </div>
         
         <p class="label">按房间号查询</p>
@@ -63,9 +63,26 @@
             <option value="办公室">办公室</option>
             <option value="楼梯">楼梯</option>
             <option value="停车场">停车场</option>
+            <option value="物理">物理</option>
           </select>
           <button class="okBtn" onclick="searchByFunction()"title="Search By Function">查询</button>
         </div>
+
+        <p class="label">按学科查询</p>
+        <div class="label">
+          <select id="select1">
+            <option value="大气">大气</option>
+            <option value="光电">光电</option>
+            <option value="花坛">花坛</option>
+            <option value="计算机">计算机</option>
+            <option value="普通">普通</option>
+            <option value="地理">地理</option>
+            <option value="信电">信电</option>
+            <option value="物理">物理</option>
+          </select>
+          <button class="okBtn" onclick="searchBySubject()"title="Search By Subject">查询</button>
+        </div>
+
       </div>
     </div>
   </body>

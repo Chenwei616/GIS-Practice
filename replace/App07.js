@@ -9,6 +9,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
   
   var value;
   
+  
   function fillColorFULL(housestateid) {
     // freezeObject(Color.fromCssColorString('#FAEBD7'));
     //debugger;
@@ -103,6 +104,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
+                    Profession:fprofession,
                   });
                 } else if (ffunction == "柱子") {
                   var orangePolygon = viewer.entities.add({
@@ -117,6 +119,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
+                    Profession:fprofession,
                   });
                 } else if (ffunction == "花坛") {
                   var orangePolygon = viewer.entities.add({
@@ -131,6 +134,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
+                    Profession:fprofession,
                   });
                 } else if (ffunction == "实验室") {
                   var orangePolygon = viewer.entities.add({
@@ -145,21 +149,8 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
-                  });
-                } else if (ffunction == "教学"||"教室") {
-                  var orangePolygon = viewer.entities.add({
-                    name: "户信息",
-                    polygon: {
-                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
-                      extrudedHeight: flag + fheight, //i+1
-                      height: flag,
-                      material: Cesium.Color.GOLD.withAlpha(0.8),
-                      outline: true,
-                      outlineColor: linecolor,
-                    },
-                    ID: fHuID,
-                    function: ffunction,
-                  });
+                    Profession:fprofession,
+                  }); 
                 } else if (ffunction == "办公室") {
                   var orangePolygon = viewer.entities.add({
                     name: "户信息",
@@ -173,6 +164,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
+                    Profession:fprofession,
                   });
                 } else if (ffunction == "楼梯") {
                   var orangePolygon = viewer.entities.add({
@@ -187,6 +179,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
+                    Profession:fprofession,
                   });
                 } else if (ffunction == "停车场") {
                   var orangePolygon = viewer.entities.add({
@@ -201,8 +194,9 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
-                  });}
-                  else if(ffunction =="台阶"){
+                    Profession:fprofession,
+                  });
+                }else if(ffunction =="台阶"){
                     var orangePolygon = viewer.entities.add({
                         name: '户信息',
                         polygon: {
@@ -212,10 +206,12 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                             material: Cesium.Color.YELLOW.withAlpha(0.8),
                             outline: true,
                             outlineColor: linecolor
-                        }
-                    });
-                }
-                else if(ffunction =="厕所"){
+                        },
+                        ID: fHuID,
+                        function: ffunction,
+                        Profession:fprofession,
+                      });
+                }else if(ffunction =="厕所"){
                     var orangePolygon = viewer.entities.add({
                         name: '户信息',
                         polygon: {
@@ -238,8 +234,26 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                             material: Cesium.Color.BLUE.withAlpha(0.8),
                             outline: true,
                             outlineColor: linecolor
-                        }
-                    });
+                        },
+                        ID: fHuID,
+                        function: ffunction,
+                        Profession:fprofession,
+                      });
+                }else if (ffunction == "教学"||"教室") {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.GOLD.withAlpha(0.8),
+                      outline: true,
+                      outlineColor: linecolor,
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
+                  });
                 }
                  else {
                   var orangePolygon = viewer.entities.add({
@@ -254,6 +268,184 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
+                    Profession:fprofession,
+                  });
+                }
+                if (ffunction == "走廊" || "栏杆" || "花坛" || "台阶" || "楼梯") {
+                  orangePolygon.description =
+                    "<p>编号：" +
+                    fHuID +
+                    "&nbsp;&nbsp;&nbsp;功能：" +
+                    ffunction +
+                    "</p>";
+                } else {
+                  orangePolygon.description =
+                    "<p>房间号：" +
+                    fHuID +
+                    "&nbsp;&nbsp;&nbsp;功能：" +
+                    ffunction +
+                    "&nbsp;&nbsp;&nbsp;所属专业：" +
+                    fprofession +
+                    "&nbsp;&nbsp;&nbsp;" +
+                    fmultimedia +
+                    "&nbsp;&nbsp;&nbsp;" +
+                    fdescription +
+                    "</p>";
+                }
+              }
+            }
+          }
+          value = "R";
+          viewer.zoomTo(viewer.entities);
+        });
+        break;
+        //真实颜色模式
+        case "R":
+        viewer.entities.removeAll();
+        Cesium.loadJson("../Apps/out.json").then(function (jsonData) {
+          //debugger;
+          var entitylist = jsonData.entitylist;
+          for (var i = 0; i < jsonData.entitylist.length; i++) {
+            if (entitylist[i].type == "H") {
+              for (var j = 0; j < entitylist[i].shapeList.length; j++) {
+                points3 = entitylist[i].shapeList[j].coords;
+                flag = entitylist[i].shapeList[j].flag;
+                flr = entitylist[i].shapeList[j].floor; //Math.floor(entitylistij].shapeList[j].coordid / 10);
+                fheight = entitylist[i].shapeList[j].height;
+                fHuID = entitylist[i].attrInfo.ID;
+                ffunction = entitylist[i].attrInfo.Function;
+                fprofession = entitylist[i].attrInfo.Profession;
+                fmultimedia = entitylist[i].attrInfo.Multimedia;
+                fdescription = entitylist[i].attrInfo.Description;
+  
+                linecolor = Cesium.Color.DARKGREEN;
+                //真实场景颜色
+                if (ffunction == "天台") {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.GREY.withAlpha(1),
+                      outline: true,
+                      outlineColor: linecolor,
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
+                  });
+                } 
+                else if (ffunction == "花坛") {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.GREEN.withAlpha(1),
+                      outline: true,
+                      outlineColor: linecolor,
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
+                  });
+                } 
+                else if(ffunction =="校徽"){
+                    var orangePolygon = viewer.entities.add({
+                        name: '户信息',
+                        polygon: {
+                            hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                            extrudedHeight: flag + fheight,//i+1
+                            height: flag,
+                            material: Cesium.Color.BLUE.withAlpha(1),
+                            outline: true,
+                            outlineColor: linecolor
+                        },
+                        ID: fHuID,
+                        function: ffunction,
+                        Profession:fprofession,
+                    });
+                }
+                else if (ffunction == "柱子") {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.SILVER.withAlpha(1),
+                      outline: true,
+                      outlineColor: Cesium.Color.WHITE.withAlpha(1),
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
+                  });
+                }
+                else if (ffunction == "走廊") {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.SILVER.withAlpha(1),
+                      outline: true,
+                      outlineColor: linecolor,
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
+                  });
+                }
+                else if (ffunction == "楼梯") {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.SILVER.withAlpha(0.8),
+                      outline: true,
+                      outlineColor: linecolor,
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
+                  });
+                }
+                else if (ffunction == "教室"||"实验室"||"办公室") {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.WHITE.withAlpha(1),
+                      outline: true,
+                      outlineColor: Cesium.Color.WHITE.withAlpha(1),
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
+                  });
+                }
+                else {
+                  var orangePolygon = viewer.entities.add({
+                    name: "户信息",
+                    polygon: {
+                      hierarchy: Cesium.Cartesian3.fromDegreesArray(points3),
+                      extrudedHeight: flag + fheight, //i+1
+                      height: flag,
+                      material: Cesium.Color.WHITE.withAlpha(0),
+                      outline: true,
+                      outlineColor: linecolor,
+                    },
+                    ID: fHuID,
+                    function: ffunction,
+                    Profession:fprofession,
                   });
                 }
                 if (ffunction == "走廊" || "栏杆" || "花坛" || "台阶" || "楼梯") {
@@ -283,7 +475,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
           value = "O";
           viewer.zoomTo(viewer.entities);
         });
-        break;
+      break;
       case "O":
         viewer.entities.removeAll();
         Cesium.loadJson("../Apps/out.json").then(function (jsonData) {
@@ -317,6 +509,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
                     },
                     ID: fHuID,
                     function: ffunction,
+                    Profession:fprofession,
                   });
                 }
   
@@ -386,7 +579,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
       }
     }
   
-    viewer.zoomTo(viewer.entities);
+    viewer.flyTo(viewer.entities);
   });
   
   viewer.scene.skyBox = new Cesium.SkyBox({
@@ -432,8 +625,9 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
     lastEle = target;
     lastMaterial = target.polygon.material;
     target.polygon.material = Cesium.Color["YELLOW"];
-    viewer.zoomTo(target);
+    viewer.flyTo(target);
   }
+  
   
   function searchByFunction() {
     if (lastEles) {
@@ -455,23 +649,43 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
         eles.push(entities[i]);
         lastMats = entities[i].polygon.material;
         entities[i].polygon.material = Cesium.Color["YELLOW"];
+        viewer.flyTo(entities[i]);
       }
     }
     lastEles = eles;
+  }
+
+  function searchBySubject() {
+    if (lastEles) {
+      for (var i = 0; i < lastEles.length; i++) {
+        lastEles[i].polygon.material = lastMats;
+      }
+      lastEles = [];
+    }
+    if (lastEle) {
+      lastEle.polygon.material = lastMaterial;
+    }
+    var ele = document.getElementById("select1");
+    var entities = viewer.entities.values;
+    var index = ele.selectedIndex;
+    var value = ele.options[index].value;
+    var eles = [];
+    for (var i = 0; i < entities.length; i++) {
+      if (entities[i].Profession == value) {
+        eles.push(entities[i]);
+        lastMats = entities[i].polygon.material;
+        entities[i].polygon.material = Cesium.Color["YELLOW"];
+        viewer.flyTo(entities[i]);
+      }
+    }
+    lastEles = eles;
+    
   }
   
 //拖动面板
 window.onload = function(){
   var addDataPanel = document.getElementById("aaa");
   // alert(addDataPanel);
-  // 判断鼠标位置是否在边框区
-  function isMouseOnBuffer(mouseX, mouseY, bufferX, bufferY, x1, y1, x2, y2) {
-    if ((Math.abs(mouseX - x1) < bufferX || Math.abs(mouseX - x2) < bufferX) || (Math.abs(mouseY - y1) < bufferY || Math.abs(mouseY - y2) < bufferY)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
   // 判断鼠标位置是否在边框区
   function isMouseOnBuffer(mouseX, mouseY, bufferX, bufferY, x1, y1, x2, y2) {
     if ((Math.abs(mouseX - x1) < bufferX || Math.abs(mouseX - x2) < bufferX) || (Math.abs(mouseY - y1) < bufferY || Math.abs(mouseY - y2) < bufferY)) {
@@ -505,5 +719,3 @@ window.onload = function(){
     }
   }
 }
-
-  
