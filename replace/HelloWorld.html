@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Hello World!</title>
+    <script src="../Build/Cesium/Cesium.js"></script>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <style>
+    @import url(../Build/Cesium/Widgets/widgets.css);
+    
+    html,
+    body,
+    #cesiumContainer {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      var viewer = new Cesium.Viewer('cesiumContainer');
+    </script>
+
+    <div id="cesiumContainer" style="position: relative;">
+      <script src="../Source/App07.js"></script>
+      <div class="cesium-viewer-toolbar" style="right:5px!important;top:45px!important;">
+       
+      <div class="addDataPanel"id="aaa">
+
+        <h3 id="title">房间展示</h3>
+        
+        <div class="label">
+          <p class="label">切换视图</p>
+          <button value=" Z"class="okBtn id="Z" onclick="levelSwitch()"title="Change Z/H View">切换</button>
+        </div>
+        
+        <p class="label">按房间号查询</p>
+        <div class="label">
+          <input type="text" id="input" >
+          <button class="okBtn"  onclick="searchTarget()"title="Search By Id">查询</button>
+        </div>
+
+        <p class="label">按功能查询</p>
+        <div class="label">
+          <select id="select">
+            <option value="走廊">走廊</option>
+            <option value="柱子">柱子</option>
+            <option value="花坛">花坛</option>
+            <option value="教室">教室</option>
+            <option value="教学">教学</option>
+            <option value="实验室">实验室</option>
+            <option value="办公室">办公室</option>
+            <option value="楼梯">楼梯</option>
+            <option value="停车场">停车场</option>
+          </select>
+          <button class="okBtn" onclick="searchByFunction()"title="Search By Function">查询</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>
+
+  <!-- <button value=" Z" id="Z" type="button" style="margin:0 auto;text-align:center;width:33px!important;height:33px!important;"class="cesium-viewer-toolbar-button" data-bind="attr:{title:buttonTooltip}," onclick="levelSwitch()"
+        title="Change Z/H View"style="background: url("0.png");height: 50px;width:  50px;">
+        <img draggable="false" class="cesium-baseLayerPicker-selected"src="../Source/0.png">  
+        </button> -->
