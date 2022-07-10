@@ -1,6 +1,7 @@
 # GIS-Practice
 
-> /src里面的41、42、43.json是还未实现的外边界分割，当前使用了一个总外边界
+## 该python文件xlrd为1.2.0
+## `pip install xlrd==1.2.0`
 
 ### 在src文件夹中按位置添加json文件
 ### 请在Cesium-1.38下的Apps目录下存放html与css，在source目录下存放js文件
