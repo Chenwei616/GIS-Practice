@@ -1,7 +1,7 @@
 # GIS-Practice
 
 > /src里面的41、42、43.json是还未实现的外边界分割，当前使用了一个总外边界
-
+###请在Cesium-1.38下的Apps目录下存放html与css，在source目录下存放js文件
 ### 在src文件夹中按位置添加json文件
 ### 直接使用仓库里的python文件跑，输出位置为 src/out/
 ### shp文件要不要加再看
